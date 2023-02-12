@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate.com</title>
+    <link rel="stylesheet" href="style.css" class="css">
+    
+
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="calculatorbaord">
+            <div class="row">
+                <input type="text" name="number" placeholder="Calculate me">
+            </div>
+        
+            
+            <div class="row1">
+                <button class="button seven col">7</button>
+                <button class="button eight col">8</button>
+                <button class="button nine col">9</button>
+                <button class="button divd col">/</button>
+            </div>
+        
+            <div class="row2">
+                <button class="button four col">4</button>
+                <button class="button five col">5</button>
+                <button class="button six col">6</button>
+                <button class="button mul col">*</button>
+            </div>
+        
+            <div class="row3">
+                <button class="button one col">1</button>
+                <button class="button two col">2</button>
+                <button class="button three col">3</button>
+                <button class="button subt col">-</button>  
+            </div>
+        
+            <div class="row4">
+                <button class="button dot col">.</button>
+                <button class="button zero col">0</button>
+                <button class="button sum col">+</button>
+                <button class="button clear col">C</button>
+            </div>
+        
+            
+            <div class="row5">
+                <button class="button answer col">=</button>
+                <button class="button back col">Del</button>
+            </div> 
+        
+        </div>
+
+        </div>
+    
+        <script>
+            //TODO MAke Del
+            let string = "";
+            let buttons = document.querySelectorAll('.button')
+            Array .from(buttons) .forEach((button)=>{
+                button.addEventListener('click', (e)=>{
+                    if(e.target.innerHTML == '='){
+                        string = eval(string);
+                        document.querySelector('input') .value = string;
+                    }
+
+                    else if(e.target.innerHTML == 'C'){
+                        string = ""
+                        document.querySelector('input') .value = string;
+                    }
+
+                    else{
+                    console.log(e.target)
+                    string = string + e.target.innerHTML
+                    document.querySelector('input') .value = string;
+                    }
+                })
+            })
+        </script>
+</body>
+</html>
